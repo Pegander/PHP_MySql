@@ -1,6 +1,6 @@
 
 <?php
-include "Base/header.html";
+include dirname(__FILE__). "/Base/header.html";
 ?>
 
 <br />
