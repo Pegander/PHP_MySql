@@ -23,6 +23,8 @@ if ($eventNamepost != "" && $eventInfopost != "" && $eventPlacepost != "" && $ev
     } else {
         echo "Error: " . $dbc . "<br>" . $conn->error;
     };
+} else {
+    echo "Alla poster måste vara ifyllda!";
 };
 //Close connection to database
 $dbc->close();

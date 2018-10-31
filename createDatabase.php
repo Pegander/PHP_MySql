@@ -31,8 +31,8 @@ $sql = "CREATE TABLE upcomingEvents (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     eventName VARCHAR(30) NOT NULL,
     eventInfo VARCHAR(100) NOT NULL,
-    eventPlace VARCHAR(50),
-    eventTime VARCHAR(30)
+    eventPlace VARCHAR(50) NOT NULL,
+    eventTime VARCHAR(20) NOT NULL
     )";
 
 $dbc->query($sql);
