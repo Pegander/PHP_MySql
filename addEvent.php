@@ -1,6 +1,7 @@
 <?php
 //Include connection file
 include "mysqli_connect.php";
+include "./Base/header.php";
 
 //Get posts from addCar.php input form.
 $eventNamepost = $_POST["eventName"];

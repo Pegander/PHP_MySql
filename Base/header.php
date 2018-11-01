@@ -13,13 +13,26 @@
 
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="/PHP_MySql/index.php">PHP Databas</a>
+        <a class="navbar-brand" href="/PHP_MySql/index.php">Frosta Multisport</a>
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
         </ul>
-        <ul class="navbar-nav navbar-reverse">
-            <li class="nav-item"><a class="nav-link" href="/php_mysql/login.php">Logga in</a></li>
-        </ul>
+        
+        <?php
+        if(isset($_SESSION["usertype"])) {
+            echo 
+            '<ul class="navbar-nav navbar-reverse">
+            <li class="nav-item"><a class="nav-link" href="/php_mysql/logout.php">Logga ut</a></li>
+            </ul>';
+        } else {
+            echo
+            '<ul class="navbar-nav navbar-reverse">
+            <li class="nav-item"><a class="nav-link" href="/php_mysql/loginprompt.php">Logga in</a></li>
+            </ul>';
+        }
+      
+        ?>
+        
     </nav>

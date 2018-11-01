@@ -1,8 +1,9 @@
 <?php
-// FIX - include dirname(__FILE__). "/Base/header.html";
-include  "../Base/header.html";
+session_start();
+include  "../Base/header.php";
 
-?>
+if($_SESSION['usertype'] === "PL1" || $_SESSION['usertype'] === "PL2")
+echo '
 <div class="container-fluid">
     <form class="form-inline" action="../addEvent.php" method="POST">
 
@@ -31,7 +32,7 @@ include  "../Base/header.html";
         </div>
     </form>
 </div>
-<?php
+';
 include "../Base/footer.html";
 
 ?>
