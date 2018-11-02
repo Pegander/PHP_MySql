@@ -2,9 +2,9 @@
 <?php
 //Always start with session_start because header checks session
 session_start();
-include "createDatabase.php";
+include "./Databasehandlers/createDatabase.php";
 include "./Base/header.php";
-include "mysqli_connect.php";
+include "./Databasehandlers/mysqli_connect.php";
 
 //If user is logged in check what privilage the user has
 if(isset($_SESSION["usertype"])){
@@ -31,13 +31,13 @@ if(isset($_SESSION["usertype"])){
             "<div class='container-fluid'>
                 <div class='row'>
                     <div class='col-12 text-center'>
-                        <a href='/php_mysql/html/eventAdder.php' class='btn btn-info' role='button'>Lägg till event</a> 
+                        <a href='/php_mysql/Eventhandlers/eventAdder.php' class='btn btn-info' role='button'>Lägg till event</a> 
                         <br />
                     </div>
                 </div>
             </div>
             
-            <form class='justify-content-center'  method='POST' action='removeEvent.php'>
+            <form class='justify-content-center'  method='POST' action='/php_mysql/Eventhandlers/removeEvent.php'>
                 <div class='form-group'>
                     <label for='id'>Eventid för event att ta bort:</label>
                     <input type='number' name='id'>
@@ -62,7 +62,7 @@ if(isset($_SESSION["usertype"])){
             "<div class='container-fluid'>
                 <div class='row'>
                     <div class='col-12 text-center'>
-                        <a href='/php_mysql/html/eventAdder.php' class='btn btn-info' role='button'>Lägg till event</a> 
+                        <a href='/php_mysql/Eventhandlers/eventAdder.php' class='btn btn-info' role='button'>Lägg till event</a> 
                         <br />
                     </div>
                 </div>
@@ -94,7 +94,14 @@ if(isset($_SESSION["usertype"])){
             $eventdate = strtotime($eventtime);
             if (date("Y-m-d", $eventdate) > date("Y-m-d")){
                 //Print out only if event has not happened
-                echo "<p>Event: " .$row["eventName"] . "  </p><p>Info om event: " . $row["eventInfo"] . "</p></p><p>Plats: " . $row["eventPlace"] . "</p></p><p>När är eventet: " . $row["eventTime"] . "</p><br/>";
+                echo "<div class='card bg-secondary' style='max-width: 400px'>
+                    <div class='card-body'>
+                        <h4 class='card-title'> " .$row["eventName"] . 
+                        "  </h4><p class='card-text'>Info om event: " . $row["eventInfo"] . 
+                        "</p><p class='card-text'>Plats: " . $row["eventPlace"] . 
+                        "</p><p>När är eventet: " . $row["eventTime"] . "</p><br/>
+                    </div>
+                </div>";
             }    
         } 
     

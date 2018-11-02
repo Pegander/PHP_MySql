@@ -1,5 +1,5 @@
 <?php
-include "/Databasehandlers/mysqli_connect.php";
+include "mysqli_connect.php";
 
 //Select all rows from myCars
 $sql = "SELECT * FROM upcomingEvents";

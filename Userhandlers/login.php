@@ -2,7 +2,7 @@
 session_start();
 
 //Include connection file
-include "mysqli_connect.php";
+include "../Databasehandlers/mysqli_connect.php";
 
 //Get posts from loginprompt.php input form.
 $inputName = $_POST["userName"];
@@ -20,7 +20,7 @@ if($result->num_rows > 0) {
     }    
 }
 if ($_SESSION['usertype'] != NULL) {
-    header("Location:index.php");
+    header("Location:/php_mysql/index.php");
     exit;
 }
 ?>

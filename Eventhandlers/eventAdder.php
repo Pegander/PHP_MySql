@@ -5,7 +5,7 @@ include  "../Base/header.php";
 if($_SESSION['usertype'] === "PL1" || $_SESSION['usertype'] === "PL2")
 echo '
 <div class="container-fluid">
-    <form class="form-inline" action="../addEvent.php" method="POST">
+    <form class="form-inline" action="/php_mysql/Eventhandlers/addEvent.php" method="POST">
 
         <div class="col-12 text-center">
             <label for="eventName">Event:</label>

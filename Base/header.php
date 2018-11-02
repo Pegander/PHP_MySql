@@ -24,12 +24,12 @@
         if(isset($_SESSION["usertype"])) {
             echo 
             '<ul class="navbar-nav navbar-reverse">
-            <li class="nav-item"><a class="nav-link" href="/php_mysql/logout.php">Logga ut</a></li>
+            <li class="nav-item"><a class="nav-link" href="/php_mysql/Userhandlers/logout.php">Logga ut</a></li>
             </ul>';
         } else {
             echo
             '<ul class="navbar-nav navbar-reverse">
-            <li class="nav-item"><a class="nav-link" href="/php_mysql/loginprompt.php">Logga in</a></li>
+            <li class="nav-item"><a class="nav-link" href="/php_mysql/Userhandlers/loginprompt.php">Logga in</a></li>
             </ul>';
         }
       

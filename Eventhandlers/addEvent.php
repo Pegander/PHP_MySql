@@ -1,7 +1,8 @@
 <?php
 //Include connection file
-include "mysqli_connect.php";
-include "./Base/header.php";
+include "../Databasehandlers/mysqli_connect.php";
+//include "/Databasehandlers/mysqli_connect.php";
+include "../Base/header.php";
 
 //Get posts from addCar.php input form.
 $eventNamepost = $_POST["eventName"];
@@ -20,7 +21,7 @@ if ($eventNamepost != "" && $eventInfopost != "" && $eventPlacepost != "" && $ev
     if ($dbc->query($sql) === TRUE) {
         $last_id = $dbc->insert_id;
         echo "Succesfully added! <br />";
-        echo "<a href='index.php'>Back to home</a>";
+        echo "<a href='/php_mysql/index.php'>Back to home</a>";
     } else {
         echo "Error: " . $dbc . "<br>" . $conn->error;
     };

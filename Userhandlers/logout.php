@@ -5,6 +5,6 @@ session_unset();
 //Destroy session
 session_destroy();
 
-header("Location:index.php");
+header("Location:/php_mysql/index.php");
 exit;
 ?>

@@ -1,8 +1,8 @@
 <?php
-include "./Base/header.php";
+include "../Base/header.php";
 ?>
 <div class="container-fluid">
-    <form class="form-inline" action="/php_mysql/login.php" method="POST">
+    <form class="form-inline" action="/php_mysql/Userhandlers/login.php" method="POST">
 
         <div class="col-12 text-center">
             <label for="eventName">Användarnamn:</label>
